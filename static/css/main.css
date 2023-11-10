@@ -1,0 +1,27 @@
+:root {
+    --main_color: #000;
+    --secondry_color: #fff;
+    --background: #3f3f3f;
+}
+body{
+    background-color:var(--background);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    background-color: var(--main_color);
+    color: var(--secondry_color);
+    margin: auto;
+}
+
+.input{
+    margin: auto;
+}
+
+a{
+    color: var(--secondry_color);
+    
+}
+a:hover{
+    color: var(--background);
+}
