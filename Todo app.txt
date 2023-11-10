@@ -1,0 +1,10 @@
+Todo list for each user
+-login
+-logout
+-register
+-index { add, delete, edit Todo }
+
+
+--add testing to this project
+
+--push to git
