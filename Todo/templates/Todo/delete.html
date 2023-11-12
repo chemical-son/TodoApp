@@ -1,0 +1,9 @@
+{% extends "main.html" %} {% block content %}
+<div class="container">
+  <form method='POST'>
+    {% csrf_token %}
+  <p>do you sure to delete this Todo <b><< {{todo}} >></b></p>
+  <input class="submit" type="submit" />
+  </form>
+</div>
+{% endblock content %}

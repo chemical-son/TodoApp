@@ -1,0 +1,41 @@
+{% extends "main.html" %} {% block content %}
+<div class="container">
+  <h1>Todos</h1>
+  <p>{{username}}</p>
+
+  <form method="POST" action="{% url 'todo:add_todo' %}">
+    {% csrf_token %}
+    <div class="feald">
+      <p class="label">Todo text</p>
+      <input
+        type="text"
+        name="content"
+        class="input"
+        placeholder="Todo text"
+        required
+      />
+    </div>
+
+    <input type="submit" value="Push" class="submit" />
+  </form>
+
+  <table>
+    <tr>
+      <th>text</th>
+      <th>is completed</th>
+    </tr>
+    {% for element in list %}
+    <tr>
+      <td>{{element.content}}</td>
+      <td><form method='POST' action="{% url 'todo:change_todo_tatus' element.id %}">
+        {% csrf_token %}
+        <input type='submit' value="{{element.is_compleated}}" class='submit'/>
+      </form></a></td>
+      <td><a href="{% url 'todo:delete_todo' element.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <a href="{% url 'auth:logout_user' %}">Logout</a>
+</div>
+{% endblock content %}

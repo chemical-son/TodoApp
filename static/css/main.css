@@ -2,7 +2,7 @@
     --main_color: #000;
     --secondry_color: #fff;
     --background: #3f3f3f;
-}
+} 
 body{
     background-color:var(--background);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,16 +12,44 @@ body{
     background-color: var(--main_color);
     color: var(--secondry_color);
     margin: auto;
+    width: 50%;
+    border: 2px solid rgb(105, 105, 105);
+    border-radius: 13px;
+    padding: 15px;
 }
 
-.input{
+.label{
+    text-align: center;
+    display: block;
+}
+
+input{
+    width: 75%;
     margin: auto;
+    display: block;
+    padding: 7px;
+    
+}
+
+.submit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submit:hover{
+    background-color: var(--background);
+    color: var(--secondry_color);
 }
 
 a{
     color: var(--secondry_color);
-    
+    display: block;
+    text-align: center;
 }
 a:hover{
     color: var(--background);
+}
+
+.error{
+    color: red;
 }

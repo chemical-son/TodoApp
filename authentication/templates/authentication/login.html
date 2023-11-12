@@ -1,13 +1,35 @@
 {% extends "main.html" %} {% block content %}
 <div class="container">
+  <ul>
+    {% for message in messages %}
+    <li class="error">{{message}}</li>
+    {% endfor %}
+  </ul>
   <form method="POST">
     {% csrf_token %}
-    <p class="label">Email</p>
-    <input type="email" class="input" placeholder="Email" />
-    <p class="label">Password</p>
-    <input type="password" class="input" placeholder="Password" />
-    <input type="submit" class="submit" />
-    <a href="../register/">Don't have accoutn</a>
+    <div class="feald">
+      <p class="label">Username</p>
+      <input
+        type="text"
+        name="username"
+        class="input"
+        placeholder="Username"
+        required
+      />
+    </div>
+    <div class="feald">
+      <p class="label">Password</p>
+      <input
+        type="password"
+        name="password"
+        class="input"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+        required
+      />
+    </div>
+
+    <input type="submit" value="Login" class="submit" />
+    <a href="{% url 'auth:register_user' %}">Don't have accoutn</a>
   </form>
 </div>
 {% endblock content %}

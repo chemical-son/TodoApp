@@ -1,4 +1,55 @@
 {% extends "main.html" %} {% block content %}
-<h1>Register</h1>
+<div class="container">
+  <ul>
+    {% for message in messages %}
+    <li class="error">{{message}}</li>
+    {% endfor %}
+  </ul>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="feald">
+      <p class="label">Username</p>
+      <input
+        type="text"
+        class="input"
+        name="username"
+        placeholder="Username"
+        required
+      />
+    </div>
+    <div class="feald">
+      <p class="label">Email</p>
+      <input
+        type="email"
+        class="input"
+        name="email"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div class="feald">
+      <p class="label">Password</p>
+      <input
+        type="password"
+        class="input"
+        name="password_1"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+        required
+      />
+    </div>
+    <div class="feald">
+      <p class="label">Conferm Password</p>
+      <input
+        type="password"
+        class="input"
+        name="password_2"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+        required
+      />
+    </div>
 
-{% endblock %}
+    <input type="submit" value="Register" class="submit" />
+    <a href="{% url 'auth:login_user' %}">I have accoutn</a>
+  </form>
+</div>
+{% endblock content %}
